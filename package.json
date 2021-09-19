@@ -1,0 +1,15 @@
+{
+  "name": "g100-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "G100",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress-vite": "^2.0.0-beta.26"
+  }
+}

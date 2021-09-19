@@ -1,0 +1,5 @@
+node_modules
+.temp
+.cache
+workspace.code-workspace
+_*.*
