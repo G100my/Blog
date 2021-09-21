@@ -3,3 +3,4 @@ node_modules
 .cache
 workspace.code-workspace
 _*.*
+coverage/
