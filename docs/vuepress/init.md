@@ -68,6 +68,7 @@ Vuepress 的介紹除了官方也可以參考 [BILLY CHIN - 介紹 VuePress 官�
 1. install、建立空白網站 (Getting started)
 1. head 設置 (自行看官網 [Configuration - Config File][head])
 1. 頁面配置 ([Theme][Theme])
+1. deployment
 
 :::danger
 **我並不會完整地把每一步每一步流程詳細列出來，**
@@ -289,3 +290,89 @@ export function getSidebarConfig(text: string, subPathName: string): SidebarConf
 ```
 
 [sb1]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
+
+### Deployment
+
+設置到這裡剩下的就只是把文件看一看，把頁面填一填，
+簡易 blog 就快完成了!!
+
+Deployment 的部分直接看[文件](https://v2.vuepress.vuejs.org/guide/deployment.html#github-pages)XD
+
+1. 設好 config 的 `base` 參數。絕大多數人應該都是專案獨立的github page -- `https://gitlab.com/<USERNAME>/<REPO>`，所以 `base` 設成 `/<REPO名稱>/` 即可。
+1. 如果你跟我一樣使用 github page，在專案根目錄底下建立 .github/workflows 資料夾，下面這段複製貼上。
+1. 注意下面 L44，我在新增專案的時候 package.json 的 `scripts` 並沒有完全按照官網 Getting Started - Manual Installation 的指令，而是寫慣用的 'dev' 和 'build'，所以你如果也有改，請記得也把 L44 改成與你的 package.json 相符的 `scripts`
+
+:::spoiler
+
+```yaml=
+name: docs
+
+on:
+  # trigger deployment on every push to main branch
+  push:
+    branches: [main]
+  # trigger deployment manually
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # fetch all commits to get last updated time or other git log info
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          # choose node.js version to use
+          node-version: '14'
+
+      # cache node_modules
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      # install dependencies if the cache did not hit
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+
+      # run build script
+      - name: Build VuePress site
+        run: yarn docs:build
+
+      # please check out the docs of the workflow for more details
+      # @see https://github.com/crazy-max/ghaction-github-pages
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          # deploy to gh-pages branch
+          target_branch: gh-pages
+          # deploy the default output dir of VuePress
+          build_dir: docs/.vuepress/dist
+        env:
+          # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+:::
+
+接著去 github 設置你的 github page 就完成了~
+
+[github](https://github.com/) > 你的部落格repo > Setting > Pages > Source 改成 gh-pages
+
+![source option](./images/pageSource.png)
+
+每當你 `git push` 就會啟動 github action，你的部落格就會重 build，就可以在 github page 直接看到新的內容。
+可以在 `Actions` 分頁查看部屬的狀況
+
+![deploying](./images/deploy.png)
