@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress-vite';
 import type { DefaultThemeOptions } from 'vuepress-vite';
+import { getNavConfig } from '../../utils/getConfig';
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
@@ -9,5 +10,8 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: '/g100-logo.png',
+    navbar: [
+      ...getNavConfig('Vuepress', 'vuepress')
+    ]
   },
 });
