@@ -4,10 +4,7 @@ description: 從零開始用 Vuepress 架部落格
 date: '2021-09-20'
 ---
 
-Vuepress-vite@next
-===
-
-###### tags: 'Vuepress'
+# 用 Vuepress 架個人部落格
 
 ## Vuepress-vite@next
 
@@ -25,7 +22,7 @@ Vuepress-vite@next
 
 其他還有考慮過 [Hexo][hexo]、[Vitepress][vitepress]
 
-#### 缺點(代價)
+**缺點(代價):**
 
 - Vuepress 相對冷門，教學並不多。唯一找到的是 第12屆鐵人賽 - [透過 VuePress 建構 JAMstack 網站來肆意玩弄 Markdown 系列文][ironman]，他介紹的版本應該是 v1，但還是值得看一下。
 - v1 和 v2 的 plugins 和 theme 並不相容。
@@ -63,7 +60,7 @@ Vuepress 的介紹除了官方也可以參考 [BILLY CHIN - 介紹 VuePress 官�
 [vitepress-2]:https://vitepress.vuejs.org/#other-differences
 [ironman]:https://ithelp.ithome.com.tw/users/20129182/ironman/3444
 
-## 接下來...
+## 接下來
 
 跳著看官網文件吧!
 以下是我實作時看官網的順序:
@@ -138,4 +135,157 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 所以...我決定就先用預設的吧，之後再來自己寫樣式
 > murmur: 其實是因為找不到喜歡的 theme 可以直接套用:zany_face: 目前樣式還非常非常少
 
-[defaultTheme]:https://vuepress.vuejs.org/theme/default-theme-config.html#default-theme-config
+[defaultTheme]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#home
+
+:::warning
+看文件的時候請注意版本!! Default Theme 許多名稱是不一樣的，另外 config 是能夠使用 typescript 的。
+:::
+
+### Navbar
+
+第一步先把 [Navbar][Navbar] 弄出來吧~~
+(請搭配文檔服用)
+
+其實在剛剛建好的空白網站已經透過內部機制有 navbar 的功能了，只是因為預設值是 `[]`，所以沒有東西。
+必須設置 `navbar` property 在 theheConfig 裡面。
+
+我的部落格預計會是以**大項目去做 nav，例如 'OOO' 相關的文章就是一個 nav item，vue-router 則會是一個 nav item 的 child item，檔案預計會以資料夾做區分**。
+
+每新增一個 nav item 就要來 config 這裡設置，這種事情我才不幹勒。
+所以，只要能把目錄路徑變成符合 themeConfig 所需要的 array 就可以了吧? 大概是用 node.js 完成。
+
+應該寫一個簡單的 function 就可以滿足我的需求了吧~?
+但這功能其實我不會做也沒做過，所以我 google 了以下關鍵字--`vuepress auto navbar`
+:::info
+**用關鍵字找資源**這件事情對工程師來說超級無敵重要!
+我們是人不是神，絕對不可能什麼都可以在短時間內把什麼都學會還融會貫通，拜託...光各種文件就看不完了，還融會貫通!
+**適時利用四方各界善心人士所分享的心得文章，可能比你能在四個小時內看完整份技術文件的能力還來的重要。**
+如果可以的話看完別人的文章也點個愛心之類的，沒錢贊助至少支持一下。
+
+偏偏怎麼下關鍵字這種事情我真的不知道該如何形容...
+在幫忙帶 好想工作室-web camp 新學員的時候常常會遇到新生不知道怎麼從茫茫大海中下關鍵字找到自己需要的資源，
+所以在接下來的文章遇到我是在網路上找資源時，我會附上我當時所蒐尋的關鍵字給，**僅做參考**。
+:::
+
+找到以下資源:
+
+- Blog:
+  - [Automatic Dynamic Sidebars in Vuepress][navbar1]
+- Stackoverflow:
+  - [How to make vuepress dynamically create the side navigation?][navbar2]
+- Issue:
+  - [Option to automatically list sub-directory in the sidebar][navbar3]
+
+如果你懶得看文章，這裡是我快速掃描後的結論:
+
+- 已經有 plugin 可以使用，但幾乎都是 vuepress v1
+- 如果要自己做，至少會用到 nodejs 的 `fs`, `path`。
+
+最後~~抄~~參考了 [Prashanth Krishnamurthy][navbar1] 這位仁兄的做法。
+
+[Navbar]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
+
+[navbar1]:https://techformist.com/automatic-dynamic-sidebar-vuepress/
+[navbar2]:https://stackoverflow.com/questions/66531421/how-to-make-vuepress-dynamically-create-the-side-navigation
+[navbar3]:https://github.com/vuejs/vuepress/issues/613
+
+到目前為止我的檔案目錄結構長這樣:
+
+![current folder structrue](images/folderStructrue.png =200x)
+
+config:
+
+```javascript=
+import { defineUserConfig } from 'vuepress-vite';
+import type { DefaultThemeOptions } from 'vuepress-vite';
+import { getNavConfig } from '../../utils/getConfig';
+
+export default defineUserConfig<DefaultThemeOptions>({
+  lang: 'zh-TW',
+  title: 'G100 印象派前端技術筆記',
+  description: 'Just playing around',
+  head: [['link', { rel: 'icon', href: '/g100-logo-small.png' }]],
+
+  themeConfig: {
+    logo: '/g100-logo.png',
+    navbar: [
+      ...getNavConfig('Vuepress', 'vuepress')
+    ]
+  },
+});
+```
+
+getCofig util:
+
+```javascript=
+import fs from 'fs';
+import path from 'path';
+// 其實並沒有任何文件教你指定 import NavbarConfig 近來單獨使用
+// 我只是因為懶得另外定義...
+// 而且這樣也能讓 vscode 直接告訴你裡面還有什麼其他你可以使用的東西，
+// 例如目前沒有用到的 link, activeMatch, rel, target
+import { NavbarConfig } from '@vuepress/theme-default/lib/shared/nav';
+
+/**
+ * screen child file name which under the specified folder. Only return extension name is '.md'
+ * @param text nav item title
+ * @param folderName specified folder name
+ * @returns \{ title, children: [...fileName] }[]
+ */
+export function getNavConfig(text: string, folderName: string): NavbarConfig {
+  const extension = ".md";
+
+  const files: string[] = fs
+    .readdirSync(path.join(getTargetDirecory(folderName)))
+    .filter(
+      (fileName: string) => {
+        if (fileName.toLowerCase() === "readme.md") return false;
+
+        return fs.statSync(path.join(getTargetDirecory(folderName), fileName)).isFile() &&
+          (path.extname(fileName)) === extension;
+      }
+    )
+    .map((fileName: string) => `/${folderName}/${fileName}`);
+  return [{ text, children: [...files] }];
+}
+
+function getTargetDirecory(folder: string): string {
+  return `${__dirname}/../docs/${folder}`;
+}
+```
+
+view:
+![current view](images/view.png)
+
+### Sidebar
+
+嘖嘖，左邊的 sidebar 呈現我不想要這樣!
+預設是把 `.md` 中的各個 `header` 作為 child nav，
+前面提到 Vuepress 本來就是為了文件而生的，
+這樣的呈現方式在文件確實合情合理也比較好讓技術人員找到想要的內容，但是我想我以後寫出來的文章，副標題應該是不會有什麼參考價值XD，也不會一篇文章樂樂長。
+
+我想要的 sidebar 是 **進入到 'OOO'分類，就顯示 'OOO' 底下的這個文章，不管我點擊到哪一篇文章，sidebar 都不會變；但是當我進入到 'XXX'分類，sidebar 就換成 'XXX' 底下的文章**
+
+這個需求只要用 [文件][sb1] example2 並且把 `sidebarDepth` 設為 `1` 就可以解決，
+但是一樣，我不想要在 `config` 裡一個一個指定 `children` 的 fileName。
+
+```javascript=
+export function getSidebarConfig(text: string, subPathName: string): SidebarConfigObject {
+  return { [`/${subPathName}/`]: getNavConfig(text, subPathName) };
+}
+```
+
+因為格式長得差不多...我只簡單寫了這樣(懶)...呵呵
+
+```json=
+// config.js
+{
+    ...something,
+    
+    sidebar: {
+      ...getSidebarConfig('Vuepress', 'vuepress'),
+    },
+}
+```
+
+[sb1]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
