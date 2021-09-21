@@ -196,7 +196,7 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 
 config:
 
-```javascript=
+```javascript
 import { defineUserConfig } from 'vuepress-vite';
 import type { DefaultThemeOptions } from 'vuepress-vite';
 import { getNavConfig } from '../../utils/getConfig';
@@ -218,7 +218,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
 getCofig util:
 
-```javascript=
+```javascript
 import fs from 'fs';
 import path from 'path';
 // 其實並沒有任何文件教你指定 import NavbarConfig 近來單獨使用
@@ -270,7 +270,7 @@ view:
 這個需求只要用 [文件][sb1] example2 並且把 `sidebarDepth` 設為 `1` 就可以解決，
 但是一樣，我不想要在 `config` 裡一個一個指定 `children` 的 fileName。
 
-```javascript=
+```javascript
 export function getSidebarConfig(text: string, subPathName: string): SidebarConfigObject {
   return { [`/${subPathName}/`]: getNavConfig(text, subPathName) };
 }
@@ -278,7 +278,7 @@ export function getSidebarConfig(text: string, subPathName: string): SidebarConf
 
 因為格式長得差不多...我只簡單寫了這樣(懶)...呵呵
 
-```json=
+```javascript
 // config.js
 {
     ...something,
@@ -302,9 +302,9 @@ Deployment 的部分直接看[文件](https://v2.vuepress.vuejs.org/guide/deploy
 1. 如果你跟我一樣使用 github page，在專案根目錄底下建立 .github/workflows 資料夾，下面這段複製貼上。
 1. 注意下面 L44，我在新增專案的時候 package.json 的 `scripts` 並沒有完全按照官網 Getting Started - Manual Installation 的指令，而是寫慣用的 'dev' 和 'build'，所以你如果也有改，請記得也把 L44 改成與你的 package.json 相符的 `scripts`
 
-:::spoiler
+::: details
 
-```yaml=
+```yaml
 name: docs
 
 on:
