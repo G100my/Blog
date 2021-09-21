@@ -191,7 +191,7 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 
 到目前為止我的檔案目錄結構長這樣:
 
-![current folder structrue](images/folderStructrue.png =200x)
+![current folder structrue](./images/folderStructrue.png)
 
 config:
 
@@ -255,7 +255,7 @@ function getTargetDirecory(folder: string): string {
 ```
 
 view:
-![current view](images/view.png)
+![current view](./images/view.png)
 
 ### Sidebar
 
