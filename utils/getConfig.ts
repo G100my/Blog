@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { NavbarConfig, SidebarConfigObject } from '@vuepress/theme-default/lib/shared/nav';
 
 function getAbsolutePath(folder: string): string {
   return `${__dirname}/../docs/${folder}`;
@@ -32,4 +33,13 @@ export function getNavConfig(text: string, folderName: string): NavbarConfig {
 
 // 
 
+/**
+ * 
+ * @param text sidebar item title
+ * @param subPathName sub path name, is equal to folder name
+ * @returns \{ '/subPathName/': [ { text, children: [ ...childFileName ] } ] }
+}
+ */
+export function getSidebarConfig(text: string, subPathName: string): SidebarConfigObject {
+  return { [`/${subPathName}/`]: getNavConfig(text, subPathName) };
 }
