@@ -9,15 +9,15 @@ date: '2021-09-20'
 ## Vuepress-vite@next
 
 剛開始寫技術文章的部落格，
-第一篇當然就從建立部落格開始。
+決定第一篇當然就從建立部落格開始啦。
 
 海量搜尋文章後，決定使用 **Vuepress-next**(Vuepress v2)。
 
 - **支援 markdown**，
 - 本質使用 **vue + vue router**，
-- **markdown 解析引擎是使用 [markdown-it][1]**，這點對於用慣 HackMD 的人可能很重要。
+- **markdown 解析引擎是使用 [markdown-it][1]**，這點對於用慣 HackMD 的人可能很重要?。
 - 可以在 markdown 裡面使用 vue，本身學習的第一個框架就是 vue，用得最順手，考量以後如果要寫些什麼東西額外的東西當然是選支援度最好的。
-- 可以使用 Vite!!
+- **可以使用 Vite!!**，之前 side project 時用過 vite，用一次就回不去了...
 - 雖然本質上是SPA，但已經把SSR的東西幫你處理好了
 
 其他還有考慮過 [Hexo][hexo]、[Vitepress][vitepress]
@@ -30,6 +30,12 @@ date: '2021-09-20'
     v2 是使用 vue 3
 - 目前文件連結很有可能會連到 vuepress v1 的資源，請小心。
 
+最終選擇 Vuepress 的原因:
+
+1. 已經有很多人用 Hexo 囉...:zany_face::smirk:，反觀 Vuepress 明明有趣多了卻沒幾篇文章? 這樣對嘛!?
+1. 在 vue 語法上的整合令人期待!!
+1. vite 實在是太香了
+
 #### Vitepress? Vuepress?
 
 **注意!!**
@@ -39,17 +45,14 @@ date: '2021-09-20'
 
 Vitepress 感覺上會更適合用在 文檔的書寫，而 Vuepress 感覺上已經偏向可以應用在 blog 這方面的需求(因為已經有生態圈、plugins，但最初誕生的目的也是為了要讓 vue 生態系的貢獻者方便寫文件)
 
-:::warning
+:::tip Murmur
 我是從 [將 Hexo 的 Markdown 渲染引擎換成 markdown-it][2]，及查看 hackmdio 底下的 [codimd repo][3]，得知 HackMD 的解析引擎是 markdown-it
 另外 **codimd** 是 hackMD 的開源版本，功能沒有書本模式。
 :::
 
-:::info
+:::tip
 Vuepress 的介紹除了官方也可以參考 [BILLY CHIN - 介紹 VuePress 官方部落格主題與套件][4]
 :::
-
-至於不選擇 hexo 的原因...
-**因為好多人用噢...:zany_face::smirk:**
 
 [1]:https://github.com/markdown-it/markdown-it
 [2]:https://titangene.github.io/article/hexo-markdown-it.html
@@ -157,7 +160,7 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 
 應該寫一個簡單的 function 就可以滿足我的需求了吧~?
 但這功能其實我不會做也沒做過，所以我 google 了以下關鍵字--`vuepress auto navbar`
-:::info
+:::tip
 **用關鍵字找資源**這件事情對工程師來說超級無敵重要!
 我們是人不是神，絕對不可能什麼都可以在短時間內把什麼都學會還融會貫通，拜託...光各種文件就看不完了，還融會貫通!
 **適時利用四方各界善心人士所分享的心得文章，可能比你能在四個小時內看完整份技術文件的能力還來的重要。**
