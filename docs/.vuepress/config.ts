@@ -4,7 +4,7 @@ import { getNavConfig, getSidebarConfig } from '../../utils/getConfig';
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
-  title: 'G100 印象派前端技術筆記',
+  title: 'G100 印象派 前端 筆記',
   description: 'Just playing around',
   head: [['link', { rel: 'icon', href: '/g100-logo-small.png' }]],
   base: '/G100-blog/',
