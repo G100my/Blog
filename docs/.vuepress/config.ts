@@ -1,7 +1,7 @@
-import { defineUserConfig } from 'vuepress-vite';
-import type { DefaultThemeOptions } from 'vuepress-vite';
-import { getNavConfig, getSidebarConfig } from '../../utils/getConfig';
-import pluginsConfig from './pluginConfig';
+import { defineUserConfig } from 'vuepress-vite'
+import type { DefaultThemeOptions } from 'vuepress-vite'
+import { getNavConfig, getSidebarConfig } from '../../utils/getConfig'
+import pluginsConfig from './pluginConfig'
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
@@ -12,13 +12,11 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: '/g100-logo.png',
-    navbar: [
-      ...getNavConfig('Vuepress', 'vuepress'),
-    ],
-    sidebar: {
-      ...getSidebarConfig('Vuepress', 'vuepress'),
-    },
+    logoDark: '/g100-logo-dark.png',
+    navbar: [...getNavConfig('Vuepress', 'vuepress')],
+    sidebar: { ...getSidebarConfig('Vuepress', 'vuepress') },
     sidebarDepth: 0,
+    repo: 'https://github.com/G100my',
   },
-  plugins: pluginsConfig
-});
+  plugins: pluginsConfig,
+})
