@@ -69,3 +69,41 @@
   --content-width: 740px;
   --homepage-width: 960px;
 }
+
+// dark mode
+
+html.dark {
+  // brand colors
+  --c-brand: #6ab1f3;
+  --c-brand-light: #90bee9;
+
+  // background colors
+  --c-bg: #22272e;
+  --c-bg-light: #2b313a;
+  --c-bg-lighter: #262c34;
+
+  // text colors
+  --c-text: #adbac7;
+  --c-text-light: #96a7b7;
+  --c-text-lighter: #8b9eb0;
+  --c-text-lightest: #8094a8;
+
+  // border colors
+  --c-border: #466483;
+  --c-border-dark: #667c92;
+
+  // custom container colors
+  --c-tip: #4279b9bb;
+  --c-warning: #ceac00a2;
+  --c-warning-bg: #585241;
+  --c-warning-title: #fbd200;
+  --c-warning-text: #cac6ac;
+  --c-danger: #990505d3;
+  --c-danger-bg: #503131e1;
+  --c-danger-title: #e70000;
+  --c-danger-text: #b8a2a2;
+  --c-details-bg: #323843;
+
+  // code blocks vars
+  --code-hl-bg-color: #363b46;
+}
