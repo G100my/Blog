@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    // this aligns with Vue's browser support
+    "target": "ES6",
+    // this enables stricter inference for data properties on `this`
+    "strict": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    // ?? outDir
+    "outDir": "./built",
+  },
+  "include": [
+    "./docs/.vuepress/*",
+    "./utils"
+  ]
+}

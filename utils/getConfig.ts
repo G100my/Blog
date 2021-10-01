@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs')
+const path = require('path')
 import { NavbarConfig, SidebarConfigObject } from '@vuepress/theme-default/lib/shared/nav';
 
 function getAbsolutePath(folder: string): string {
