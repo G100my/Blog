@@ -107,3 +107,39 @@ html.dark {
   // code blocks vars
   --code-hl-bg-color: #363b46;
 }
+
+// custom container
+html {
+  --c-ignore: #797979;
+  --c-ignore-bg: #a1a1a144;
+  --c-ignore-title: #555555;
+  --c-ignore-text: #808080;
+
+  &.dark {
+    --c-ignore: #5c5c5c9a;
+    --c-ignore-bg: transparent;
+    --c-ignore-title: #959595;
+    --c-ignore-text: #6d6d6d;
+  }
+}
+
+.custom-container {
+  &.murmur {
+    padding: 0.1rem 1.5rem;
+    border-left-width: 0.5rem;
+    border-left-style: solid;
+    margin: 1rem 0;
+
+    border-color: var(--c-ignore);
+    background-color: var(--c-ignore-bg);
+    color: var(--c-ignore-text);
+
+    .custom-container-title {
+      color: var(--c-ignore-title);
+    }
+
+    a {
+      color: var(--c-ignore-text-accent);
+    }
+  }
+}
