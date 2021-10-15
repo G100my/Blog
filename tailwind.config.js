@@ -5,6 +5,7 @@ module.exports = {
     content: ['./docs/.vuepress/*.vue', './docs/**/*.vue'],
   },
   darkMode: false, // or 'media' or 'class'
+  preflight: false,
   theme: {
     extend: {},
   },
