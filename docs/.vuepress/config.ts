@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress-vite'
 import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite'
-import { getNavConfig, getSidebarConfig } from '../../utils/getConfig'
+import { makeNavbarRoute, makeSidebarRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 
 export default defineUserConfig<DefaultThemeOptions>({
@@ -13,8 +13,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/g100-logo.png',
     logoDark: '/g100-logo-dark.png',
-    navbar: [...getNavConfig('vuepress', 'Vuepress')],
-    sidebar: { ...getSidebarConfig('vuepress', 'Vuepress') },
+    navbar: [...makeNavbarRoute('vuepress', 'Vuepress')],
+    sidebar: { ...makeSidebarRoute('vuepress', 'Vuepress') },
     sidebarDepth: 0,
     repo: 'https://github.com/G100my',
   },
