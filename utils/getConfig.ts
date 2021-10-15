@@ -12,7 +12,7 @@ function getAbsolutePath(folder: string): string {
  * @param folderName specified folder name
  * @returns \{ title, children: [...fileName] }[]
  */
-export function getNavConfig(text: string, folderName: string): NavbarConfig {
+export function getNavConfig(folderName: string, text: string): NavbarConfig {
   const extension = ".md";
   const basePath = path.join(getAbsolutePath(folderName));
 
@@ -28,7 +28,7 @@ export function getNavConfig(text: string, folderName: string): NavbarConfig {
     )
     .map((fileName: string) => `/${folderName}/${fileName}`);
 
-  return [{ text, children: [...files] }];
+  return [{ text: text ? text : folderName, children: [...files] }];
 }
 
 // 
@@ -40,6 +40,6 @@ export function getNavConfig(text: string, folderName: string): NavbarConfig {
  * @returns \{ '/subPathName/': [ { text, children: [ ...childFileName ] } ] }
 }
  */
-export function getSidebarConfig(text: string, subPathName: string): SidebarConfigObject {
-  return { [`/${subPathName}/`]: getNavConfig(text, subPathName) };
+export function getSidebarConfig(subPathName: string, text: string): SidebarConfigObject {
+  return { [`/${subPathName}/`]: getNavConfig(subPathName, text) };
 }

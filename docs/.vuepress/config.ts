@@ -13,8 +13,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/g100-logo.png',
     logoDark: '/g100-logo-dark.png',
-    navbar: [...getNavConfig('Vuepress', 'vuepress')],
-    sidebar: { ...getSidebarConfig('Vuepress', 'vuepress') },
+    navbar: [...getNavConfig('vuepress', 'Vuepress')],
+    sidebar: { ...getSidebarConfig('vuepress', 'Vuepress') },
     sidebarDepth: 0,
     repo: 'https://github.com/G100my',
   },
