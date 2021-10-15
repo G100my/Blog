@@ -5,7 +5,13 @@ module.exports = {
     content: ['./docs/.vuepress/*.vue', './docs/**/*.vue'],
   },
   darkMode: false, // or 'media' or 'class'
-  preflight: false,
+  corePlugins: {
+    preflight: false,
+    float: false,
+    accessibility: false,
+    clear: false,
+    tableLayout: false,
+  },
   theme: {
     extend: {},
   },
