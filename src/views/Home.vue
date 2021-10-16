@@ -1,14 +1,11 @@
 <template>
-  <p>建置中</p>
+  <div class="h-screen">
+    <div class="flex">
+      <div class="flex-1">
+        <img src="../assets/G100.jpg" alt="" />
+      </div>
+      <div class="flex-1"></div>
+    </div>
+  </div>
 </template>
-<script setup>
-import {
-  usePageFrontmatter,
-} from '@vuepress/client'
-// import type { DefaultThemeHomePageFrontmatter } from '@vuepress/theme-default/lib/shared'
-
-const frontmatter = usePageFrontmatter()
-
-console.log(frontmatter)
-
-</script>
+<script setup></script>
