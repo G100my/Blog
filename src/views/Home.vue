@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
-    <div class="h-screen flex bg-[#edf6f9]">
+  <div class="home flex">
+    <div class="flex-1 flex">
       <div class="flex-[10] flex justify-center items-center relative">
-        <img class="absolute h-full w-full blur-xl brightness-150" src="../assets/20161225.jpg" alt="" />
+        <img class="absolute h-full w-full blur-xl brightness-125 opacity-70" src="../assets/20161225.jpg" alt="" />
         <img class="relative h-[400px] w-[400px] rounded-lg brightness-125" src="../assets/G100.jpg" alt="" />
       </div>
       <div class="flex-[11]">
@@ -19,7 +19,7 @@
               <li>鄉下環境長大的台灣人，微台。</li>
             </ul>
             <div class="my-10 mx-auto flex flex-col gap-y-5 max-w-sm">
-              <button class="_btn bg-[#ff66d980] text-color" type="button">
+              <button class="_btn bg-[#ffd2f4] text-color" type="button">
                 <a href="https://g100my.gitlab.io/Space-Radio/#/" target="_blank">Space Radio</a>
               </button>
               <button class="_btn bg-gray-100" type="button">

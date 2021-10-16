@@ -61,13 +61,13 @@
   --font-family-code: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
   // layout vars
-  --navbar-height: 3.6rem;
-  --navbar-padding-v: 0.7rem;
-  --navbar-padding-h: 1.5rem;
-  --sidebar-width: 20rem;
-  --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
-  --content-width: 740px;
-  --homepage-width: 960px;
+  // --navbar-height: 3.6rem;
+  // --navbar-padding-v: 0.7rem;
+  // --navbar-padding-h: 1.5rem;
+  // --sidebar-width: 20rem;
+  // --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
+  // --content-width: 740px;
+  --homepage-width: auto;
 }
 
 // dark mode
@@ -146,4 +146,17 @@ html {
 
 code {
   color: #ff7323;
+}
+
+.theme-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  padding-top: 0;
+  margin: 0;
+  margin-top: var(--navbar-height);
+  flex: 1;
 }
