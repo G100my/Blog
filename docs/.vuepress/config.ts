@@ -31,6 +31,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         postcss: {
           plugins: [
             require('tailwindcss'),
+            require('postcss-nested'),
             require('autoprefixer')
           ]
         }
