@@ -1,5 +1,5 @@
 import { defineClientAppEnhance } from '@vuepress/client'
-import Home from './Home.vue'
+import Home from '../../src/views/Home.vue'
 
 import 'tailwindcss/tailwind.css'
 
