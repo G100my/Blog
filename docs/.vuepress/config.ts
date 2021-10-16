@@ -2,12 +2,15 @@ import { defineUserConfig } from 'vuepress-vite'
 import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite'
 import { makeNavbarRoute, makeSidebarRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
+import svgLoader from 'vite-svg-loader'
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
   title: 'G100 印象派 前端 筆記',
   description: 'Just playing around',
-  head: [['link', { rel: 'icon', href: '/g100-logo-small.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/g100-logo-small.png' }],
+  ],
   base: '/G100-blog/',
 
   themeConfig: {
@@ -23,10 +26,12 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   bundlerConfig: {
     viteOptions: {
+      plugins: [svgLoader()],
       css: {
         postcss: {
           plugins: [
             require('tailwindcss'),
+            require('postcss-nested'),
             require('autoprefixer')
           ]
         }

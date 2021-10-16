@@ -1,8 +1,9 @@
 import { defineClientAppEnhance } from '@vuepress/client'
-import Home from './Home.vue'
+// @ts-ignore
+import HomeShell from './theme/HomeShell.vue'
 
 import 'tailwindcss/tailwind.css'
 
 export default defineClientAppEnhance(({ app }) => {
-  app.component('Home', Home)
+  app.component('Home', HomeShell)
 })
