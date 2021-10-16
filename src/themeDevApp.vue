@@ -1,5 +1,5 @@
 <template>
-  <p>ddd</p>
+  <Home />
 </template>
 <script>
 import Home from './views/Home.vue'
