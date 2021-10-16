@@ -1,11 +1,11 @@
 <template>
   <div class="home flex">
-    <div class="flex-1 flex">
-      <div class="flex-[10] flex justify-center items-center relative">
-        <img class="absolute h-full w-full blur-xl brightness-125 opacity-70" src="../assets/20161225.jpg" alt="" />
-        <img class="relative h-[400px] w-[400px] rounded-lg brightness-125" src="../assets/G100.jpg" alt="" />
+    <div class="flex-1 flex flex-col lg:flex-row">
+      <div class="flex-[10] pt-12 lg:pt-0 flex justify-center items-center relative">
+        <img class="fixed inset-0 lg:absolute lg:inset-auto h-full w-full blur-xl brightness-125 opacity-70" src="../assets/20161225.jpg" alt="" />
+        <img class="relative h-full w-full max-h-[300px] max-w-[300px] lg:max-h-[400px] lg:max-w-[400px] rounded-lg brightness-125" src="../assets/G100.jpg" alt="" />
       </div>
-      <div class="flex-[11]">
+      <div class="flex-[11] relative">
         <div class="h-full mx-auto flex flex-col justify-center max-w-lg">
           <article class="text-lg text-right space-y-3">
             <p>需要大量感官刺激才不覺得人生無聊，</p>
