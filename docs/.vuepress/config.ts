@@ -16,8 +16,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/g100-logo.png',
     logoDark: '/g100-logo-dark.png',
-    navbar: [...makeNavbarRoute('vuepress', 'Vuepress')],
-    sidebar: { ...makeSidebarRoute('vuepress', 'Vuepress') },
+    navbar: [...makeNavbarRoute('vuepress', 'Vuepress'), ...makeNavbarRoute('frontend-note', 'Front-end 筆記')],
+    sidebar: { ...makeSidebarRoute('vuepress', 'Vuepress'), ...makeSidebarRoute('frontend-note', 'Front-end 筆記') },
     sidebarDepth: 0,
     repo: 'https://github.com/G100my',
   },
