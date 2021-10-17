@@ -9,7 +9,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   title: 'G100 印象派 前端 筆記',
   description: 'Just playing around',
   head: [
-    ['link', { rel: 'icon', href: '/g100-logo-small.png' }],
+    ['link', { rel: 'icon', type: "image/x-icon", href: 'favicon.ico?v=2' }],
   ],
   base: '/G100-blog/',
 
