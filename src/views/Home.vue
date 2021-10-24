@@ -29,12 +29,12 @@
             <ul class="flex justify-center gap-x-8 pl-0 list-none">
               <li>
                 <a href="https://www.instagram.com/__g100my/" target="_blank">
-                  <IconIG class="h-10 w-10" />
+                  <IconIG />
                 </a>
               </li>
               <li>
                 <a href="https://github.com/G100my" target="_blank">
-                  <IconGithub class="h-10 w-10" />
+                  <IconGithub />
                 </a>
               </li>
             </ul>
