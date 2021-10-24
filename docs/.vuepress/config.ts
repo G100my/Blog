@@ -11,7 +11,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   head: [
     ['link', { rel: 'icon', type: "image/x-icon", href: 'favicon.ico?v=2' }],
   ],
-  base: '/G100-blog/',
+  base: '/',
 
   themeConfig: {
     logo: '/g100-logo.png',
@@ -19,7 +19,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar: [...makeNavbarRoute('vuepress', 'Vuepress'), ...makeNavbarRoute('frontend-note', 'Front-end 筆記'), ...makeNavbarRoute('sideProject', 'Side Project')],
     sidebar: { ...makeSidebarRoute('vuepress', 'Vuepress'), ...makeSidebarRoute('frontend-note', 'Front-end 筆記') },
     sidebarDepth: 0,
-    repo: 'https://github.com/G100my/G100-blog',
+    repo: 'https://github.com/G100my/G100my.github.io/',
   },
 
   plugins: pluginsConfig,
