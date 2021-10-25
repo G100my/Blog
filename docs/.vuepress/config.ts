@@ -9,6 +9,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   title: 'G100 印象派 前端 筆記',
   description: 'Just playing around',
   head: [
+    ['meta', { name: "google-site-verification", content: "tf18HhmYfg1OqUkm85gsOQgzEf3eCml_yx2uBLfKGrc" }],
     ['link', { rel: 'icon', type: "image/x-icon", href: 'favicon.ico?v=2' }],
   ],
   base: '/',
