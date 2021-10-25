@@ -3,6 +3,12 @@ import { PluginConfig, PluginOptions } from 'vuepress-vite'
 
 const pluginsConfig: PluginConfig<PluginOptions>[] = [
   [
+    '@vuepress/plugin-google-analytics',
+    {
+      id: 'G-JH39M5NFKP',
+    },
+  ],
+  [
     '@vuepress/container',
     {
       type: 'info',
