@@ -10,6 +10,8 @@ date: '2021-01-16'
 
 **Developer:** [G100](/)
 
+**Link:** [https://g100my.gitlab.io/Space-Radio/](https://g100my.gitlab.io/Space-Radio/)
+
 ---
 
 ## 基於 Spotify 音樂串流服務的「**區域性空間公共點歌平台**」。
