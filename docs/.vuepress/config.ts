@@ -3,6 +3,7 @@ import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite'
 import { makeNavbarRoute, makeSidebarRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 import svgLoader from 'vite-svg-loader'
+import path from 'path'
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
@@ -41,6 +42,12 @@ export default defineUserConfig<DefaultThemeOptions>({
         postcss: {
           plugins: [require('tailwindcss'), require('postcss-nested'), require('autoprefixer')],
         },
+      },
+      resolve: {
+        alias: [
+          { find: 'src', replacement: '../../../../../src' },
+          { find: 'docs', replacement: '../../../../../docs' },
+        ],
       },
     },
   } as ViteBundlerOptions,
