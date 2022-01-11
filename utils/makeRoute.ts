@@ -19,7 +19,7 @@ export function makeNavbarRoute(folderName: string, text: string): NavbarConfig 
   const files: string[] = fs
     .readdirSync(basePath)
     .filter((fileName: string) => {
-      if (fileName.toLowerCase() === 'readme.md') return false
+      if (fileName.toLowerCase() === 'readme.md' || fileName.startsWith('_')) return false
 
       return fs.statSync(path.join(basePath, fileName)).isFile() && path.extname(fileName) === extension
     })
