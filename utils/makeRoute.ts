@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import { NavbarConfig, SidebarConfigObject } from '@vuepress/theme-default/lib/shared/nav';
+import fs from 'fs'
+import path from 'path'
+import { NavbarConfig, SidebarConfigObject } from '@vuepress/theme-default/lib/shared/nav'
 
 function getAbsolutePath(folder: string): string {
-	return `${__dirname}/../docs/${folder}`;
+  return `${__dirname}/../docs/${folder}`
 }
 
 /**
@@ -13,25 +13,22 @@ function getAbsolutePath(folder: string): string {
  * @returns \{ title, children: [...fileName] }[]
  */
 export function makeNavbarRoute(folderName: string, text: string): NavbarConfig {
-	const extension = ".md";
-	const basePath = path.join(getAbsolutePath(folderName));
+  const extension = '.md'
+  const basePath = path.join(getAbsolutePath(folderName))
 
-	const files: string[] = fs
-		.readdirSync(basePath)
-		.filter(
-			(fileName: string) => {
-				if (fileName.toLowerCase() === "readme.md") return false;
+  const files: string[] = fs
+    .readdirSync(basePath)
+    .filter((fileName: string) => {
+      if (fileName.toLowerCase() === 'readme.md') return false
 
-				return fs.statSync(path.join(basePath, fileName)).isFile() &&
-					(path.extname(fileName)) === extension;
-			}
-		)
-		.map((fileName: string) => `/${folderName}/${fileName}`);
+      return fs.statSync(path.join(basePath, fileName)).isFile() && path.extname(fileName) === extension
+    })
+    .map((fileName: string) => `/${folderName}/${fileName}`)
 
-	return [{ text: text ? text : folderName, children: [...files] }];
+  return [{ text: text ? text : folderName, children: [...files] }]
 }
 
-// 
+//
 
 /**
  * 
@@ -41,5 +38,5 @@ export function makeNavbarRoute(folderName: string, text: string): NavbarConfig 
 }
  */
 export function makeSidebarRoute(subPathName: string, text: string): SidebarConfigObject {
-	return { [`/${subPathName}/`]: makeNavbarRoute(subPathName, text) };
+  return { [`/${subPathName}/`]: makeNavbarRoute(subPathName, text) }
 }

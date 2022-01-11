@@ -18,16 +18,16 @@ date: '2021-09-20'
 - **markdown 解析引擎是使用 [markdown-it][1]**，這點對於用慣 HackMD 的人可能很重要?。
 - 可以在 markdown 裡面使用 vue，本身學習的第一個框架就是 vue，用得最順手，考量以後如果要寫些什麼東西額外的東西當然是選支援度最好的。
 - **可以使用 Vite!!**，之前 side project 時用過 vite，用一次就回不去了...
-- 雖然本質上是SPA，但已經把SSR的東西幫你處理好了
+- 雖然本質上是 SPA，但已經把 SSR 的東西幫你處理好了
 
 其他還有考慮過 [Hexo][hexo]、[Vitepress][vitepress]
 
 **缺點(代價):**
 
-- Vuepress 相對冷門，教學並不多。唯一找到的是 第12屆鐵人賽 - [透過 VuePress 建構 JAMstack 網站來肆意玩弄 Markdown 系列文][ironman]，他介紹的版本應該是 v1，但還是值得看一下。
+- Vuepress 相對冷門，教學並不多。唯一找到的是 第 12 屆鐵人賽 - [透過 VuePress 建構 JAMstack 網站來肆意玩弄 Markdown 系列文][ironman]，他介紹的版本應該是 v1，但還是值得看一下。
 - v1 和 v2 的 plugins 和 theme 並不相容。
-    v1 是使用 vue 2
-    v2 是使用 vue 3
+  v1 是使用 vue 2
+  v2 是使用 vue 3
 - 目前文件連結很有可能會連到 vuepress v1 的資源，請小心。
 
 最終選擇 Vuepress 的原因:
@@ -54,14 +54,14 @@ Vitepress 感覺上會更適合用在 文檔的書寫，而 Vuepress 感覺上�
 Vuepress 的介紹除了官方也可以參考 [BILLY CHIN - 介紹 VuePress 官方部落格主題與套件][4]
 :::
 
-[1]:https://github.com/markdown-it/markdown-it
-[2]:https://titangene.github.io/article/hexo-markdown-it.html
-[3]:https://github.com/hackmdio/codimd
-[4]:https://billyyyyy3320.com/zh/2020/01/25/intro-to-vuepress-blog-theme-and-plugin/
-[hexo]:https://hexo.io/zh-tw/
-[vitepress]:https://vitepress.vuejs.org/
-[vitepress-2]:https://vitepress.vuejs.org/#other-differences
-[ironman]:https://ithelp.ithome.com.tw/users/20129182/ironman/3444
+[1]: https://github.com/markdown-it/markdown-it
+[2]: https://titangene.github.io/article/hexo-markdown-it.html
+[3]: https://github.com/hackmdio/codimd
+[4]: https://billyyyyy3320.com/zh/2020/01/25/intro-to-vuepress-blog-theme-and-plugin/
+[hexo]: https://hexo.io/zh-tw/
+[vitepress]: https://vitepress.vuejs.org/
+[vitepress-2]: https://vitepress.vuejs.org/#other-differences
+[ironman]: https://ithelp.ithome.com.tw/users/20129182/ironman/3444
 
 ## 接下來
 
@@ -70,7 +70,7 @@ Vuepress 的介紹除了官方也可以參考 [BILLY CHIN - 介紹 VuePress 官�
 
 1. install、建立空白網站 (Getting started)
 1. head 設置 (自行看官網 [Configuration - Config File][head])
-1. 頁面配置 ([Theme][Theme])
+1. 頁面配置 ([Theme][theme])
 1. deployment
 
 :::danger
@@ -79,8 +79,8 @@ Vuepress 的介紹除了官方也可以參考 [BILLY CHIN - 介紹 VuePress 官�
 **一步一步列出來、那就叫 寫實派 了**
 :::
 
-[head]:https://v2.vuepress.vuejs.org/guide/configuration.html#config-file
-[Theme]:https://v2.vuepress.vuejs.org/guide/theme.html#community-theme
+[head]: https://v2.vuepress.vuejs.org/guide/configuration.html#config-file
+[theme]: https://v2.vuepress.vuejs.org/guide/theme.html#community-theme
 
 ## install
 
@@ -130,7 +130,7 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 如果你已經有中意的 theme 建議可以直接安裝、照著那個 theme 的文件是配製你的頁面。
 
 如果覺得 default theme 已經滿足你的需求
-請見 [Default Theme Config][defaultTheme]
+請見 [Default Theme Config][defaulttheme]
 相關設置包含 nav, sidebar, search box 都在裡面。
 
 - 要找貢獻者們的樣式請到 npm、`keywords:vuepress-theme`找，目前似乎還沒有一個地方去整合蒐集這些 theme。
@@ -141,7 +141,7 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 其實是因為找不到喜歡的 theme 可以直接套用:zany_face: 目前樣式還非常非常少
 :::
 
-[defaultTheme]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#home
+[defaulttheme]: https://v2.vuepress.vuejs.org/reference/default-theme/config.html#home
 
 :::warning
 看文件的時候請注意版本!! Default Theme 許多名稱是不一樣的，另外 config 是能夠使用 typescript 的。
@@ -149,7 +149,7 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 
 ### Navbar
 
-第一步先把 [Navbar][Navbar] 弄出來吧~~
+第一步先把 [Navbar][navbar] 弄出來吧~~
 (請搭配文檔服用)
 
 其實在剛剛建好的空白網站已經透過內部機制有 navbar 的功能了，只是因為預設值是 `[]`，所以沒有東西。
@@ -189,11 +189,10 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 
 最後~~抄~~參考了 [Prashanth Krishnamurthy][navbar1] 這位仁兄的做法。
 
-[Navbar]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
-
-[navbar1]:https://techformist.com/automatic-dynamic-sidebar-vuepress/
-[navbar2]:https://stackoverflow.com/questions/66531421/how-to-make-vuepress-dynamically-create-the-side-navigation
-[navbar3]:https://github.com/vuejs/vuepress/issues/613
+[navbar]: https://v2.vuepress.vuejs.org/reference/default-theme/config.html#navbar
+[navbar1]: https://techformist.com/automatic-dynamic-sidebar-vuepress/
+[navbar2]: https://stackoverflow.com/questions/66531421/how-to-make-vuepress-dynamically-create-the-side-navigation
+[navbar3]: https://github.com/vuejs/vuepress/issues/613
 
 到目前為止我的檔案目錄結構長這樣:
 
@@ -202,35 +201,35 @@ docs 底下可以建立 `.vuepress` 資料夾，`.vuepress`專門放 vuepress �
 config:
 
 ```javascript
-import { defineUserConfig } from 'vuepress-vite';
-import type { DefaultThemeOptions } from 'vuepress-vite';
-import { getNavConfig } from '../../utils/getConfig';
+import { defineUserConfig } from 'vuepress-vite'
+import type { DefaultThemeOptions } from 'vuepress-vite'
+import { getNavConfig } from '../../utils/getConfig'
 
-export default defineUserConfig<DefaultThemeOptions>({
-  lang: 'zh-TW',
-  title: 'G100 印象派前端技術筆記',
-  description: 'Just playing around',
-  head: [['link', { rel: 'icon', href: '/g100-logo-small.png' }]],
+export default defineUserConfig <
+  DefaultThemeOptions >
+  {
+    lang: 'zh-TW',
+    title: 'G100 印象派前端技術筆記',
+    description: 'Just playing around',
+    head: [['link', { rel: 'icon', href: '/g100-logo-small.png' }]],
 
-  themeConfig: {
-    logo: '/g100-logo.png',
-    navbar: [
-      ...getNavConfig('Vuepress', 'vuepress')
-    ]
-  },
-});
+    themeConfig: {
+      logo: '/g100-logo.png',
+      navbar: [...getNavConfig('Vuepress', 'vuepress')],
+    },
+  }
 ```
 
 getCofig util:
 
 ```javascript
-import fs from 'fs';
-import path from 'path';
+import fs from 'fs'
+import path from 'path'
 // 其實並沒有任何文件教你指定 import NavbarConfig 近來單獨使用
 // 我只是因為懶得另外定義...
 // 而且這樣也能讓 vscode 直接告訴你裡面還有什麼其他你可以使用的東西，
 // 例如目前沒有用到的 link, activeMatch, rel, target
-import { NavbarConfig } from '@vuepress/theme-default/lib/shared/nav';
+import { NavbarConfig } from '@vuepress/theme-default/lib/shared/nav'
 
 /**
  * screen child file name which under the specified folder. Only return extension name is '.md'
@@ -239,24 +238,23 @@ import { NavbarConfig } from '@vuepress/theme-default/lib/shared/nav';
  * @returns \{ title, children: [...fileName] }[]
  */
 export function getNavConfig(text: string, folderName: string): NavbarConfig {
-  const extension = ".md";
+  const extension = '.md'
 
   const files: string[] = fs
     .readdirSync(path.join(getTargetDirecory(folderName)))
-    .filter(
-      (fileName: string) => {
-        if (fileName.toLowerCase() === "readme.md") return false;
+    .filter((fileName: string) => {
+      if (fileName.toLowerCase() === 'readme.md') return false
 
-        return fs.statSync(path.join(getTargetDirecory(folderName), fileName)).isFile() &&
-          (path.extname(fileName)) === extension;
-      }
-    )
-    .map((fileName: string) => `/${folderName}/${fileName}`);
-  return [{ text, children: [...files] }];
+      return (
+        fs.statSync(path.join(getTargetDirecory(folderName), fileName)).isFile() && path.extname(fileName) === extension
+      )
+    })
+    .map((fileName: string) => `/${folderName}/${fileName}`)
+  return [{ text, children: [...files] }]
 }
 
 function getTargetDirecory(folder: string): string {
-  return `${__dirname}/../docs/${folder}`;
+  return `${__dirname}/../docs/${folder}`
 }
 ```
 
@@ -268,7 +266,7 @@ view:
 嘖嘖，左邊的 sidebar 呈現我不想要這樣!
 預設是把 `.md` 中的各個 `header` 作為 child nav，
 前面提到 Vuepress 本來就是為了文件而生的，
-這樣的呈現方式在文件確實合情合理也比較好讓技術人員找到想要的內容，但是我想我以後寫出來的文章，副標題應該是不會有什麼參考價值XD，也不會一篇文章樂樂長。
+這樣的呈現方式在文件確實合情合理也比較好讓技術人員找到想要的內容，但是我想我以後寫出來的文章，副標題應該是不會有什麼參考價值 XD，也不會一篇文章樂樂長。
 
 我想要的 sidebar 是 **進入到 'OOO'分類，就顯示 'OOO' 底下的這個文章，不管我點擊到哪一篇文章，sidebar 都不會變；但是當我進入到 'XXX'分類，sidebar 就換成 'XXX' 底下的文章**
 
@@ -277,7 +275,7 @@ view:
 
 ```javascript
 export function getSidebarConfig(text: string, subPathName: string): SidebarConfigObject {
-  return { [`/${subPathName}/`]: getNavConfig(text, subPathName) };
+  return { [`/${subPathName}/`]: getNavConfig(text, subPathName) }
 }
 ```
 
@@ -287,14 +285,14 @@ export function getSidebarConfig(text: string, subPathName: string): SidebarConf
 // config.js
 {
     ...something,
-    
+
     sidebar: {
       ...getSidebarConfig('Vuepress', 'vuepress'),
     },
 }
 ```
 
-[sb1]:https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
+[sb1]: https://v2.vuepress.vuejs.org/reference/default-theme/config.html#sidebar
 
 ### Deployment
 
@@ -303,7 +301,7 @@ export function getSidebarConfig(text: string, subPathName: string): SidebarConf
 
 Deployment 的部分直接看[文件](https://v2.vuepress.vuejs.org/guide/deployment.html#github-pages)XD
 
-1. 設好 config 的 `base` 參數。絕大多數人應該都是專案獨立的github page -- `https://gitlab.com/<USERNAME>/<REPO>`，所以 `base` 設成 `/<REPO名稱>/` 即可。
+1. 設好 config 的 `base` 參數。絕大多數人應該都是專案獨立的 github page -- `https://gitlab.com/<USERNAME>/<REPO>`，所以 `base` 設成 `/<REPO名稱>/` 即可。
 1. 如果你跟我一樣使用 github page，在專案根目錄底下建立 .github/workflows 資料夾，下面這段複製貼上。
 1. 注意下面 L44，我在新增專案的時候 package.json 的 `scripts` 並沒有完全按照官網 Getting Started - Manual Installation 的指令，而是寫慣用的 'dev' 和 'build'，所以你如果也有改，請記得也把 L44 改成與你的 package.json 相符的 `scripts`
 
@@ -373,7 +371,7 @@ jobs:
 
 接著去 github 設置你的 github page 就完成了~
 
-[github](https://github.com/) > 你的部落格repo > Setting > Pages > Source 改成 gh-pages
+[github](https://github.com/) > 你的部落格 repo > Setting > Pages > Source 改成 gh-pages
 
 ![source option](./images/pageSource.png)
 

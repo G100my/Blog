@@ -14,7 +14,7 @@ Vuepress 就會從上面的預設路徑(`docs/.vuepress/styles/index.scss`)去�
 
 如果要更改預設路徑 (意思就是更改檔案目錄結構配置)，
 
-很遺憾，似乎是沒有辦法單做這項的修改。(如果可以請告知Q_Q)
+很遺憾，似乎是沒有辦法單做這項的修改。(如果可以請告知 Q_Q)
 
 **可能要使用 Theme API 來 extend Default theme ，把它變成新的 theme 再做設定才可以。**
 
@@ -317,6 +317,6 @@ description: Description of this page
 所以假設今天我想讓我的 Home page 是客製化的個人經歷/履歷/自我介紹，
 這類幾個月就要添上一筆的東西，就很適合使用 frontmatter 來寫，在自訂自己想要的 component 依序渲染。
 
-(嘿對，就跟你平常工作使用 vue 來寫網頁一樣XD)
+(嘿對，就跟你平常工作使用 vue 來寫網頁一樣 XD)
 
 大概是這樣子~

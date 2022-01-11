@@ -1,4 +1,3 @@
-
 const fs = {
   readdirSync() {
     return ['123.md', '1234.md']
@@ -7,9 +6,9 @@ const fs = {
     return {
       isFile() {
         return true
-      }
+      },
     }
-  }
+  },
 }
 
 export default fs
