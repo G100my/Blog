@@ -3,7 +3,7 @@ module.exports = {
   purge: ['./docs/.vuepress/*.vue', './docs/**/*.vue', './src/**/*.vue'],
   darkMode: false, // or 'media' or 'class'
   corePlugins: {
-    preflight: false,
+    preflight: true,
     float: false,
     accessibility: false,
     clear: false,
