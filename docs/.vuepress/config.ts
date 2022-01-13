@@ -20,13 +20,13 @@ export default defineUserConfig<DefaultThemeOptions>({
     logoDark: '/g100-logo-dark.png',
     navbar: [
       ...makeNavbarRoute('vuepress', 'Vuepress'),
-      ...makeNavbarRoute('frontend-note', 'Front-end 筆記'),
+      ...makeNavbarRoute('anything', 'Anything'),
       ...makeNavbarRoute('sideProject', 'Side Project'),
       ...makeNavbarRoute('vue', 'Vue'),
     ],
     sidebar: {
       ...makeSidebarRoute('vuepress', 'Vuepress'),
-      ...makeSidebarRoute('frontend-note', 'Front-end 筆記'),
+      ...makeSidebarRoute('anything', 'Anything'),
       ...makeSidebarRoute('vue', 'Vue'),
     },
     sidebarDepth: 0,
