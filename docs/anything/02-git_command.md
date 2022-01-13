@@ -14,7 +14,7 @@ date: 2021-01-14
 額外花了時間從 git doc, vscode doc 裡面挖掘這些指令、操作非常值得，
 分享出來。
 
-[toc]
+[[toc]]
 
 ## `-h` / `--help`
 
@@ -109,6 +109,7 @@ alias.re=rebase -i --autostash --autosquash
 
 :::
 
+:::tip
 至於為什麼要這樣整理 commit?
 全部 commit 在一起不是更快速嗎~?
 我自己的理由是: 為了之後 `git revert` 比較方便，
@@ -121,6 +122,7 @@ alias.re=rebase -i --autostash --autosquash
 
 的情況，上述這些有可能就會用到 `git revert` 來快速回復，
 這時候一個 commit 都是相關邏輯而且細小，改動起來就會非常方便。
+:::
 
 ## `git log --grep='message'`
 
@@ -158,13 +160,20 @@ commit message 的 title 是 "(anything): init 02 - git command"
 然後再簡單的描述這個**區間**做了什麼事情，
 我覺得有助於自己過了幾個禮拜後回頭看看自己做了什麼進度。
 
-(但如果壓根不會想要回頭看的話，這個方式絕對是多此一舉 XD)
+(但如果壓根不會想要回頭看的話，這個方式絕對是多此一舉 😆)
+
+![](./images/2022-01-14-03-24-27.png)
+
+## git 其實有自動補齊指令的功能
+
+像是 `git reset --hard`，其實可以 `git reset --h` 就可以了，
+只要 git 能找到單一符合的結果，就可以不必把後面的字全部打完。
 
 ---
 
 下面這邊也是關於 git 操作，但是是使用 vscode 的介面來操作。
 
-## `Git: Stage Selected Ranges`
+## Vscode command - `Git: Stage Selected Ranges`
 
 ![](./images/2022-01-14-02-24-25.png)
 
