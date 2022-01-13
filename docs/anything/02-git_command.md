@@ -83,6 +83,7 @@ reset 回去再慢慢重複剛剛的 commit 絕對是浪費生命的行為。
 
 ![](./images/2022-01-14-01-27-18.png)
 ![](./images/2022-01-14-01-28-01.png)
+
 一樣像是 commit 的流程，只是這次 git 會很貼心的先幫你把相關註解打好，
 讓你知道這個 commit 是要用來修改之前 commit 的 commit
 
@@ -188,7 +189,8 @@ commit message 的 title 是 "(anything): init 02 - git command"
 沒有反白就會是 光標 所在的位置
 
 ![](./images/2022-01-14-02-40-32.png)
-(我的 theme 反白太不明顯，就這張換成白色的，可不是盜圖啊)
+
+(我的 theme 反白太不明顯，就這張換成白色的，這可不是盜圖啊)
 
 然後按下 `F1` (Show all command)，Windows 和 Mac 預設都是 `F1`
 
