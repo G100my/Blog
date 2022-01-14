@@ -1,7 +1,7 @@
 ---
 # lang: zh-TW
 # head:
-title: 個人精選 - git 指令操作
+title: 自以為的 git 指令精選
 description: interactive rebase --autostash --autosquash, commit --fixup:amend, merge --no-ff, --no-commit,
 date: 2021-01-14
 ---
@@ -82,13 +82,15 @@ reset 回去再慢慢重複剛剛的 commit 絕對是浪費生命的行為。
 (順帶一提 `git commit --allow-empty` 就可以製造出 沒有任何修改的 commit，在教學時很好用 XD)
 
 ![](./images/2022-01-14-01-27-18.png)
-![](./images/2022-01-14-01-28-01.png)
 
 一樣像是 commit 的流程，只是這次 git 會很貼心的先幫你把相關註解打好，
 讓你知道這個 commit 是要用來修改之前 commit 的 commit
 
-![](./images/2022-01-14-01-29-03.png)
+![](./images/2022-01-14-01-28-01.png)
+
 `git rebase -i --autosquash`，給他 Enter 下去。
+
+![](./images/2022-01-14-01-29-03.png)
 
 剛剛那個 fixup 的 commit 會自動飛到指定的 commit hash(b276d3b)下面，
 你只要輕輕地 儲存、退出，All Done!!
