@@ -6,7 +6,7 @@
   "scripts": {
     "docs:build": "vuepress build docs",
     "docs": "vuepress dev docs",
-    "dev": "vite -r ./"
+    "dev": "vite"
   },
   "author": "G100",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "tailwindcss": "^2.2.19",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
+    "vite-plugin-pages": "^0.20.1",
     "vite-svg-loader": "^2.2.0",
     "vue-router": "^4.0.12",
     "vuepress-vite": "^2.0.0-beta.35"

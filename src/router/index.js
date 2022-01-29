@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import IndexNav from '../views/IndexNav.vue'
 import Home from '../views/Home.vue'
-import DynamicComponentDemo from '../components/vue/DynamicComponentDemo.vue'
+import AutoRoutes from '~pages'
 
 export const routes = [
   {
@@ -14,11 +14,7 @@ export const routes = [
     name: 'Home',
     component: Home,
   },
-  {
-    path: '/DynamicComponentDemo',
-    name: 'DynamicComponentDemo',
-    component: DynamicComponentDemo,
-  },
+  ...AutoRoutes,
 ]
 
 export const router = createRouter({
