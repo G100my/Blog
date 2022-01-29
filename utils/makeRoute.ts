@@ -1,42 +1,48 @@
 import fs from 'fs'
 import path from 'path'
-import { NavbarConfig, SidebarConfigObject } from '@vuepress/theme-default/lib/shared/nav'
-
-function getAbsolutePath(folder: string): string {
-  return `${__dirname}/../docs/${folder}`
-}
+import { NavbarConfig, NavbarGroup } from '@vuepress/theme-default/lib/shared/nav'
 
 /**
- * screen child file name which under the specified folder. Only return extension name is '.md'
- * @param text nav item title
- * @param folderName specified folder name
- * @returns \{ title, children: [...fileName] }[]
+ *
+ * @param {string} folder /docs 底下的 folder name
+ * @returns
  */
-export function makeNavbarRoute(folderName: string, text: string): NavbarConfig {
+function getDirPath(folder) {
+  return `${process.cwd()}/docs/${folder}`
+}
+
+const docsRootName: string = ''
+
+/**
+ * make vuepress route config
+ * @param {[key: string]: string} map folder name - display name
+ * @param {string[]} exceptions filder name or file name
+ * @param {string} folderName If no spicial demand, do NOT changed, Thanks.
+ * @returns
+ */
+export function makeNavRoute(
+  map: { [key: string]: string },
+  exceptions: string[] = [],
+  folderName: string = docsRootName
+): NavbarConfig {
   const extension = '.md'
-  const basePath = path.join(getAbsolutePath(folderName))
+  const basePath = getDirPath(folderName)
 
-  const files: string[] = fs
-    .readdirSync(basePath)
-    .filter((fileName: string) => {
-      if (fileName.toLowerCase() === 'readme.md' || fileName.startsWith('_')) return false
+  const children: NavbarConfig = fs.readdirSync(basePath).reduce((accumulator, subDir: string) => {
+    if (exceptions.includes(subDir)) return accumulator
 
-      return fs.statSync(path.join(basePath, fileName)).isFile() && path.extname(fileName) === extension
-    })
-    .map((fileName: string) => `/${folderName}/${fileName}`)
+    const state = fs.statSync(path.join(basePath, subDir))
 
-  return [{ text: text ? text : folderName, children: [...files] }]
-}
+    if (state.isFile() && path.extname(subDir) === extension) {
+      accumulator.push(`${folderName}/${subDir}`)
+    } else if (state.isDirectory()) {
+      accumulator.push({
+        text: map[subDir] ?? (subDir as string),
+        children: makeNavRoute(map, exceptions, `${folderName}/${subDir}`),
+      } as NavbarGroup)
+    }
+    return accumulator
+  }, [])
 
-//
-
-/**
- * 
- * @param text sidebar item title
- * @param subPathName sub path name, is equal to folder name
- * @returns \{ '/subPathName/': [ { text, children: [ ...childFileName ] } ] }
-}
- */
-export function makeSidebarRoute(subPathName: string, text: string): SidebarConfigObject {
-  return { [`/${subPathName}/`]: makeNavbarRoute(subPathName, text) }
+  return children
 }
