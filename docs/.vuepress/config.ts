@@ -46,8 +46,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
       resolve: {
         alias: [
-          { find: 'src', replacement: '../../../../../src' },
-          { find: 'docs', replacement: '../../../../../docs' },
+          { find: 'src', replacement: process.cwd() + '/src' },
+          { find: 'docs', replacement: process.cwd() + '/docs' },
         ],
       },
     },
