@@ -1,9 +1,19 @@
 import { defineUserConfig } from 'vuepress-vite'
 import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite'
-import { makeNavbarRoute, makeSidebarRoute } from '../../utils/makeRoute'
+import { makeNavRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 import svgLoader from 'vite-svg-loader'
-import path from 'path'
+
+const defaultExceptiojns = ['index.md', '.vuepress']
+
+const exceptions: string[] = ['components', 'images']
+const folderNameMap = {
+  vuepress: 'Vuepress',
+  anything: 'Anything',
+  sideProject: 'Side Project',
+  vue: 'Vue',
+}
+const navs = makeNavRoute(folderNameMap, exceptions.concat(defaultExceptiojns))
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
@@ -18,17 +28,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/g100-logo.png',
     logoDark: '/g100-logo-dark.png',
-    navbar: [
-      ...makeNavbarRoute('vuepress', 'Vuepress'),
-      ...makeNavbarRoute('anything', 'Anything'),
-      ...makeNavbarRoute('sideProject', 'Side Project'),
-      ...makeNavbarRoute('vue', 'Vue'),
-    ],
-    sidebar: {
-      ...makeSidebarRoute('vuepress', 'Vuepress'),
-      ...makeSidebarRoute('anything', 'Anything'),
-      ...makeSidebarRoute('vue', 'Vue'),
-    },
+    navbar: navs,
+    sidebar: navs,
     sidebarDepth: 0,
     repo: 'https://github.com/G100my/G100my.github.io/',
   },
