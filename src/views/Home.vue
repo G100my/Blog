@@ -27,12 +27,12 @@
               <li>鄉下環境長大的台灣人，微台。</li>
             </ul>
             <div class="my-10 mx-auto flex flex-col gap-y-5 max-w-sm">
-              <button class="_btn bg-[#ffd2f4] text-color" type="button">
-                <a href="https://g100my.gitlab.io/Space-Radio/#/" target="_blank">Space Radio</a>
-              </button>
-              <button class="_btn bg-gray-100" type="button">
-                <a href="https://www.cakeresume.com/s--hCYv4B1OJUn_Goo97IKMzA--/g100my" target="_blank">Cake Resume</a>
-              </button>
+              <a class="w-full" href="https://g100my.gitlab.io/Space-Radio/#/" target="_blank">
+                <button class="_btn w-full bg-[#ffd2f4] text-color" type="button">Space Radio</button>
+              </a>
+              <!-- <a href="https://www.cakeresume.com/s--hCYv4B1OJUn_Goo97IKMzA--/g100my" target="_blank">
+                <button class="_btn bg-gray-100" type="button">Cake Resume</button>
+              </a> -->
             </div>
             <ul class="flex justify-center gap-x-8 pl-0 list-none">
               <li>
