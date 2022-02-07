@@ -24,7 +24,7 @@
           <div class="mt-4">
             <ul class="space-y-3 mx-auto pl-0 list-none max-w-sm">
               <li>Front-end Developer.</li>
-              <li>鄉下環境長大的台灣人，微台。</li>
+              <li>鄉下環境長大的台灣人。</li>
             </ul>
             <div class="my-10 mx-auto flex flex-col gap-y-5 max-w-sm">
               <a class="w-full" href="https://g100my.gitlab.io/Space-Radio/#/" target="_blank">
