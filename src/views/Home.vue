@@ -14,7 +14,7 @@
         />
       </div>
       <div class="flex-[11] relative">
-        <div class="h-full mx-auto flex flex-col justify-center max-w-lg">
+        <div class="h-full mx-auto flex flex-col justify-center max-w-lg text-gray-800 lg:text-current">
           <article class="text-lg text-right space-y-3">
             <p>需要大量感官刺激才不覺得人生無聊，</p>
             <p>卯起來闖進新世界，接收新事物，嘗試新挑戰，</p>
