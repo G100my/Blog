@@ -66,6 +66,10 @@ Slack 官方其實已經做出很多 integration/api 可以使用，
 ```
 
 可以用 JSON 的格式可以去自訂訊息內容。
+在 Slack 的世界裡面這個東西叫 `Block Kit`，
+感覺可以做出很多元的東西！！但...如果要快捷一點可以用下面這個 Builder 迅速匯入模板來修改比較不會浪費生命
+
+[Slack Block Kit Builder](https://app.slack.com/block-kit-builder/T92N97FNG)
 
 ```yaml
 - name: Post to a Slack channel
@@ -98,3 +102,62 @@ Slack 官方其實已經做出很多 integration/api 可以使用，
 [job-step]: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idsteps
 [repo-secret]: https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository
 [apps]: https://api.slack.com/apps
+
+### 最後附上我的範例
+
+```yaml=
+      - name: Post to a Slack channel
+        id: slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # Slack channel id, channel name, or user id to post message.
+          # See also: https://api.slack.com/methods/chat.postMessage#channels
+          channel-id: ${{secrets.SLACK_CHANNEL_ID}}
+
+          # For posting a simple plain text message
+          # slack-message: 'GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}'
+
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "＿＿＿＿＿ has a new update:\n*<${{secrets.SLACK_URL_PRODUCTION}}|Production>*\t*<${{secrets.SLACK_URL_STAGING}}|Staging>*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Branch:* ${{github.ref_name}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Build result:* ${{ job.status }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repo:* ${{github.repository}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Actor:* ${{github.actor}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Compare:* ${{github.event.compare}}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+```
+
+裡面有附上一些 `github action` 特有的 `context`
+可以到 [github 官網看文件](https://docs.github.com/en/actions/learn-github-actions/contexts)
