@@ -92,7 +92,7 @@ export default {
 ```
 
 <script>
-import CountSample from 'src/components/vuepress/CountSample.vue'
+import CountSample from './components/CountSample.vue'
 
 export default {
   components: {

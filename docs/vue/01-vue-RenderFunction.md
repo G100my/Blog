@@ -166,7 +166,7 @@ vue 3 一樣。
 <DynamicComponentDemo />
 
 <script setup>
-import DynamicComponentDemo from 'src/components/vue/DynamicComponentDemo.vue'
+import DynamicComponentDemo from './components/DynamicComponentDemo.vue'
 </script>
 
 ```

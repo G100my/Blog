@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "src/*": ["src/*"],
-      "docs/*": ["docs/*"]
-    }
+    "baseUrl": "./"
   }
 }

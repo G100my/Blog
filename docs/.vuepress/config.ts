@@ -44,12 +44,6 @@ export default defineUserConfig<DefaultThemeOptions>({
           plugins: [require('tailwindcss'), require('postcss-nested'), require('autoprefixer')],
         },
       },
-      resolve: {
-        alias: [
-          { find: 'src', replacement: '../../src' },
-          { find: 'docs', replacement: '../../docs' },
-        ],
-      },
     },
   } as ViteBundlerOptions,
 })
