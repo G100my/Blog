@@ -5,3 +5,4 @@ workspace.code-workspace
 _*.*
 coverage/
 .DS_Store
+**/dist
