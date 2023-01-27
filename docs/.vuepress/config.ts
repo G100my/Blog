@@ -17,7 +17,7 @@ const navs = makeNavRoute(folderNameMap, exceptions.concat(defaultExceptiojns))
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-TW',
-  title: 'G100 印象派 前端 筆記',
+  title: 'G100 前端開發 筆記',
   description: 'Just playing around',
   head: [
     ['meta', { name: 'google-site-verification', content: 'tf18HhmYfg1OqUkm85gsOQgzEf3eCml_yx2uBLfKGrc' }],
