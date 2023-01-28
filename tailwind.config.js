@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'jit',
-  content: ['docs/**/*.vue'],
+  content: ['docs/.vuepress/**/*.vue'],
   theme: {
     extend: {},
   },
