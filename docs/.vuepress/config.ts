@@ -1,4 +1,4 @@
-import { defineUserConfig } from 'vuepress-vite'
+import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress-vite'
 import { makeNavRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 import svgLoader from 'vite-svg-loader'
@@ -24,20 +24,18 @@ export default defineUserConfig({
   ],
   base: '/',
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: '/g100-logo.png',
     logoDark: '/g100-logo-dark.png',
     navbar: navs,
     sidebar: navs,
     sidebarDepth: 0,
     repo: 'https://github.com/G100my/G100my.github.io/',
-  },
+  }),
 
   plugins: pluginsConfig,
 
-  bundlerConfig: {
-    viteOptions: {
-      plugins: [svgLoader()],
-    },
-  },
+  bundler: viteBundler({
+    viteOptions: { plugins: [svgLoader()] },
+  }),
 })
