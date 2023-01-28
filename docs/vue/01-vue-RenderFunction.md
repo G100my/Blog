@@ -165,10 +165,6 @@ vue 3 一樣。
 
 <DynamicComponentDemo />
 
-<script setup>
-import DynamicComponentDemo from './components/DynamicComponentDemo.vue'
-</script>
-
 ```
 <template>
   <div class="w-96 h-40 border-2">

@@ -91,17 +91,6 @@ export default {
 </script>
 ```
 
-<script>
-import CountSample from './components/CountSample.vue'
-
-export default {
-  components: {
-    CountSample
-  }
-}
-
-</script>
-
 :::warning
 
 > As Vue SFC can contain only one \<script> element, you should avoid using more than one \<script> in VuePress markdown.
