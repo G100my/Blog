@@ -2,6 +2,7 @@ import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress-vite'
 import { makeNavRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 import svgLoader from 'vite-svg-loader'
+import path from 'path'
 
 const defaultExceptiojns = ['index.md', '.vuepress']
 
@@ -23,6 +24,8 @@ export default defineUserConfig({
     ['link', { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico?v=2' }],
   ],
   base: '/',
+
+  clientConfigFile: path.resolve(__dirname, './clientConfig.ts'),
 
   theme: defaultTheme({
     logo: '/g100-logo.png',
