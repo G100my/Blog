@@ -1,5 +1,4 @@
 import { defineUserConfig } from 'vuepress-vite'
-import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite'
 import { makeNavRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 import svgLoader from 'vite-svg-loader'
@@ -15,7 +14,7 @@ const folderNameMap = {
 }
 const navs = makeNavRoute(folderNameMap, exceptions.concat(defaultExceptiojns))
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   lang: 'zh-TW',
   title: 'G100 前端開發 筆記',
   description: 'Just playing around',
@@ -45,5 +44,5 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
       },
     },
-  } as ViteBundlerOptions,
+  },
 })
