@@ -34,7 +34,7 @@
                 <button class="_btn bg-gray-100" type="button">Cake Resume</button>
               </a> -->
             </div>
-            <ul class="flex justify-center gap-x-8 pl-0 list-none">
+            <ul class="flex justify-center gap-x-8 pl-0 list-none pb-10">
               <li>
                 <a href="https://www.instagram.com/__g100my/" target="_blank">
                   <IconIG />
