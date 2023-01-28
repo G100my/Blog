@@ -38,11 +38,6 @@ export default defineUserConfig({
   bundlerConfig: {
     viteOptions: {
       plugins: [svgLoader()],
-      css: {
-        postcss: {
-          plugins: [require('tailwindcss'), require('postcss-nested'), require('autoprefixer')],
-        },
-      },
     },
   },
 })
