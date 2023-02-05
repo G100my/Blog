@@ -19,7 +19,7 @@ Slack 官方其實已經做出很多 integration/api 可以使用，
 
 雖然沒有說什麼時候會真的被廢棄掉，但想到以後可能又要在設定一次就覺得麻煩，
 乾脆一次就先弄好，
-所以開始海量搜尋，這種小東西的資源真的都比較少啊。
+所以開始海量搜尋，這種小東西的資源真的都比較少。
 
 找到這個 [Slack api official repo](https://github.com/slackapi/slack-github-action)
 
@@ -103,7 +103,7 @@ Slack 官方其實已經做出很多 integration/api 可以使用，
 [repo-secret]: https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository
 [apps]: https://api.slack.com/apps
 
-### 最後附上我的範例
+### 範例
 
 ```yaml=
       - name: Post to a Slack channel

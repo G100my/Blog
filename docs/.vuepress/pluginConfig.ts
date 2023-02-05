@@ -1,6 +1,9 @@
 import { containerPlugin } from '@vuepress/plugin-container'
 import registerComponentsPlugin from '@vuepress/plugin-register-components'
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+import { getDirname, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 const pluginsConfig = [
   googleAnalyticsPlugin({
@@ -21,7 +24,13 @@ const pluginsConfig = [
     after: (): string => '</div>\n',
   }),
   registerComponentsPlugin({
-    componentsPatterns: ['docs/**/components/**/*.vue'],
+    componentsDir: path.resolve(__dirname, '../'),
+    componentsPatterns: ['**/*.vue'],
+    getComponentName: filename => {
+      const autoImportConponentName = path.trimExt(filename.replace(/\/|\\/g, '-'))
+      console.log(`Auto import: ${autoImportConponentName}`)
+      return autoImportConponentName
+    },
   }),
 ]
 

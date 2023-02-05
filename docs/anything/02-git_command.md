@@ -1,16 +1,14 @@
 ---
 # lang: zh-TW
 # head:
-title: 自以為的 git 指令精選
+title: git 指令精選
 description: interactive rebase --autostash --autosquash, commit --fixup:amend, merge --no-ff, --no-commit,
 date: 2021-01-14
 ---
 
 # 好用的、方便的 git command
 
-沒有什麼前言，不打算講廢話，反正就是**時間很重要!!**
-
-這裡紀錄幾個我個人**非常**常用的 git command、vscode 操作。
+紀錄幾個我個人**非常**常用的 git command、vscode 操作。
 額外花了時間從 git doc, vscode doc 裡面挖掘這些指令、操作非常值得，
 分享出來。
 
@@ -54,8 +52,6 @@ git commit --amend --no-edit
 
 用途: 產出一個新的、有標記的 commit，在 git rebase 時，git 會認得這個標記，然後把它放到正確的位置上。
 
-文字超級難表達，上圖!!
-
 :::warning 溫馨小提醒
 下面所有 git tree 是自定義的 `git log` alias，
 喜歡的話可以自己拿去改，我也是從 [Chris](https://dwatow.github.io/) 大大那裡偷來的
@@ -65,6 +61,12 @@ alias.tree=log -20 --pretty=format:"%h - %Cblue%an%Creset, %Cgreen%ad%Creset, %C
 ```
 
 至於參數該怎麼放，請參閱 [git scm - pretty-formats](https://git-scm.com/docs/pretty-formats)
+而 `git commit --fixup=amend` 也很長
+附上我的 alias
+
+```
+alias.fixup=!f() { git commit --fixup=amend:$1; }; f
+```
 
 :::
 
@@ -146,17 +148,10 @@ message 的部分如果只是"單詞"，可以不必加 `'` / `"`
 而且領先了 2 個 commit 還沒被 push，
 commit message 的 title 是 "(anything): init 02 - git command"
 
-:::murmur
-這個我其實也沒有很明白為什麼可以放 `-vv`，
-從 stackoverflow 抄來的，沒額外去翻 spec
-`git branch -h` 只有列出 `-v`
-:::
-
 ## `git merge --no-ff --no-commit`
 
 用途: merge 時強制不要 ff (Fast forward)，也不要直接就把預設的 merge message 給 commit 進去。
 
-這個就比較......看風格
 如果你的 commit 習慣跟我一樣 **零碎** 的話，
 好像可以採用看看?
 不使用 ff 模式可以在 commit 支線圖多出一條線
@@ -181,13 +176,9 @@ commit message 的 title 是 "(anything): init 02 - git command"
 ![](./images/2022-01-14-02-24-25.png)
 
 過往我會使用 `git add -p` 或者 `git add -i`
-去細膩的挑出我這次要 commit 的內容，
-........覺得超級麻煩啊啊啊啊!! (超討厭麻煩!)
+去細膩的挑出我這次要 commit 的內容，但很麻煩
 
-後來爬了 vscode 的文件馬上上了天堂
-讚嘆 vscode，真的在多方面都整合的超棒 der!
-
-直接框選你要加入 staging 的行數，shift + 上下左右、滑鼠拖曳選擇...怎樣都好
+直接用 vscode command 直接框選你要加入 staging 的行數，shift + 上下左右、滑鼠拖曳選擇...怎樣都好
 沒有反白就會是 光標 所在的位置
 
 ![](./images/2022-01-14-02-40-32.png)

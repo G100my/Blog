@@ -2,7 +2,9 @@ import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress-vite'
 import { makeNavRoute } from '../../utils/makeRoute'
 import pluginsConfig from './pluginConfig'
 import svgLoader from 'vite-svg-loader'
-import path from 'path'
+import { getDirname, path } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 const defaultExceptiojns = ['index.md', '.vuepress']
 
