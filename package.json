@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs:build": "vuepress build docs",
-    "docs": "vuepress dev docs",
-    "dev": "vite"
+    "dev": "vuepress dev docs"
   },
   "author": "G100",
   "license": "ISC",
