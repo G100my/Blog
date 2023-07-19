@@ -27,7 +27,7 @@
               <li>鄉下環境長大的台灣人。</li>
             </ul>
             <div class="my-10 mx-auto flex flex-col gap-y-5 max-w-sm">
-              <a class="w-full" href="https://g100my.gitlab.io/Space-Radio/#/" target="_blank">
+              <a class="w-full" href="https://space-radio.app/" target="_blank">
                 <button class="_btn w-full bg-[#ffd2f4] text-color" type="button">Space Radio</button>
               </a>
               <!-- <a href="https://www.cakeresume.com/s--hCYv4B1OJUn_Goo97IKMzA--/g100my" target="_blank">
