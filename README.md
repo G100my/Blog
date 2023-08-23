@@ -1,63 +1,40 @@
-# Nuxt 3 Minimal Starter
+# Road Map
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+- 基本
+  - 羅
+  - front-end developer
+  - lubn
+  - 工作聯繫：email, line
+  - 前端網頁開發/靜態網站架設
+- 連結 ig, github, cakeresume, linkin,
 
-## Setup
+  - ig: https://www.instagram.com/lo_ol.g100/
+  - github: https://github.com/G100my
+  - cakeResume: https://www.cakeresume.com/me/g100my
+  - linkin: https://www.linkedin.com/in/g100lo/
 
-Make sure to install the dependencies:
+- spotify 正在播
 
-```bash
-# npm
-npm install
+- 作品集
+  - space-radio: https://space-radio.app/#/
+  - 大港女神: https://www.yourharbourlover.baby/
+- 工商商家：萩条、推薦的店家
 
-# pnpm
-pnpm install
+- ~~google 行事曆~~
+- 找事做骰子 (except fitler feature)
+- 100 件想做的事情
+- 生命格狀計時
 
-# yarn
-yarn install
-```
+## 目的：
 
-## Development Server
+- ~~應徵用？~~
+- 商用？
+- 認識我？
+- 華麗且流暢的展示
 
-Start the development server on `http://localhost:3000`:
+## Others
 
-```bash
-# npm
-npm run dev
+手機版 一頁式
+電腦版 分頁式
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+黑色
