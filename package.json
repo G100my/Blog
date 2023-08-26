@@ -11,11 +11,18 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/three": "^0.155.1",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5"
+    "@types/three": "^0.155.1",
+    "nuxt": "^3.6.5",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3"
   },
   "dependencies": {
     "three": "^0.155.0"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }
