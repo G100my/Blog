@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       // fullInstall: false,
     },
   },
+  devServer: {
+    port: 2309,
+  },
   app: {
     head: {
       link: [
