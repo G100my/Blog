@@ -1,3 +1,8 @@
 {
-  "me": "Lo"
+  "me": "Lo",
+  "me.title": "Front-end Developer",
+  "me.company_of_employment": "Lubn",
+  "me.contact_info": "Contact",
+  "me.contact": "Contact Information",
+  "me.skills": "Front-end Web Development / Static Website Setup"
 }
