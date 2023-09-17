@@ -7,7 +7,9 @@ onMounted(() => {
   const m = now.getMonth()
   const nowIndex = (y - 1991) * 12 + (m - 0)
 
-  const target = document.getElementById('date_container')?.children.item(nowIndex) as HTMLDivElement
+  const target = document
+    .getElementById('date_container')
+    ?.children.item(nowIndex) as HTMLDivElement
   target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'
 })
 </script>
@@ -15,11 +17,11 @@ onMounted(() => {
   <section>
     <div
       id="date_container"
-      class="grid grid-cols-[repeat(21,1fr)] grid-rows-[repeat(40,1fr)] gap-0.5 h-screen w-screen p-3 items-center justify-items-center"
+      class="grid h-screen w-screen grid-cols-[repeat(21,1fr)] grid-rows-[repeat(40,1fr)] items-center justify-items-center gap-0.5 p-3"
     >
       <div
         v-for="i in 840"
-        class="w-3 h-3 sm:w-5 sm:h-5 md:w-7 md:h-7 rounded-[1px] bg-blue-950/40 border border-neutral-900"
+        class="h-3 w-3 rounded-[1px] border border-neutral-900 bg-blue-950/40 sm:h-5 sm:w-5 md:h-7 md:w-7"
       />
     </div>
   </section>
