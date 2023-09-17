@@ -1,7 +1,12 @@
 <template>
-  <div class="bg-black">
-    <LifeProgressing class="fixed inset-0" />
+  <div class="relative mx-auto h-screen max-w-lg bg-slate-950">
+    <LifeProgressing class="absolute" />
 
-    <NuxtPage class="relative z-10 min-h-screen bg-transparent" />
+    <NuxtPage class="relative z-10 min-h-screen" />
   </div>
 </template>
+<style>
+body {
+  @apply bg-black;
+}
+</style>

@@ -14,15 +14,13 @@ onMounted(() => {
 })
 </script>
 <template>
-  <section>
+  <div
+    id="date_container"
+    class="grid h-screen w-full grid-cols-[repeat(21,1fr)] grid-rows-[repeat(40,1fr)] items-center justify-items-center gap-0.5 p-3"
+  >
     <div
-      id="date_container"
-      class="grid h-screen w-screen grid-cols-[repeat(21,1fr)] grid-rows-[repeat(40,1fr)] items-center justify-items-center gap-0.5 p-3"
-    >
-      <div
-        v-for="i in 840"
-        class="h-3 w-3 rounded-[1px] border border-neutral-900 bg-blue-950/40 sm:h-5 sm:w-5 md:h-7 md:w-7"
-      />
-    </div>
-  </section>
+      v-for="i in 840"
+      class="h-3 w-3 rounded-[1px] border border-neutral-900 bg-blue-950/40 sm:h-4 sm:w-4"
+    />
+  </div>
 </template>
